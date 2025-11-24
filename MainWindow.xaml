@@ -1,0 +1,44 @@
+﻿<Window x:Class="PdfConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PDF Dönüştürücü" Height="600" Width="900" WindowStartupLocation="CenterScreen">
+    <Grid Background="#2C3E50">
+        <Grid x:Name="MainGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="PDF Araçları" Foreground="White" FontSize="32" FontWeight="Bold" 
+                       HorizontalAlignment="Center" Margin="0,10,0,20"/>
+
+            <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0" Grid.Column="0" Content="📄 PDF Birleştir" Click="BtnMerge_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="0" Grid.Column="1" Content="🗜️ PDF Sıkıştır" Click="BtnCompress_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="0" Grid.Column="2" Content="📝 Metin Çıkart" Click="BtnOcr_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="0" Content="📘 PDF → Word" Click="BtnPdfToWord_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="1" Content="📊 PDF → Excel" Click="BtnPdfToExcel_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="📽️ PDF → PowerPoint" Click="BtnPdfToPpt_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="2" Grid.Column="0" Content="📄 PDF → JPG" Click="BtnPdfToJpg_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="2" Grid.Column="1" Content="📘 Word → PDF" Click="BtnWordToPdf_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="2" Grid.Column="2" Content="📊 Excel → PDF" Click="BtnExcelToPdf_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="3" Grid.Column="0" Content="📽️ PowerPoint → PDF" Click="BtnPptToPdf_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            <Button Grid.Row="3" Grid.Column="1" Content="🖼️ JPG → PDF" Click="BtnJpgToPdf_Click" Style="{StaticResource MenuButton}" Margin="5"/>
+            </Grid>
+        </Grid>
+
+        <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" Visibility="Collapsed"/>
+    </Grid>
+</Window>

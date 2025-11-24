@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseSystemDrawing>true</UseSystemDrawing>
+    <NoWarn>NU1902</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="3.3.0" />
+    <PackageReference Include="Docnet.Core" Version="2.6.0" />
+    <PackageReference Include="itext7" Version="8.0.2" />
+    <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Office.Interop.Excel" Version="16.0.18925.20022">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.PowerPoint" Version="15.0.4420.1018">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Office.Interop.Word" Version="15.0.4797.1004">
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </PackageReference>
+    <PackageReference Include="System.Drawing.Common" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="office">
+      <HintPath>C:\Windows\assembly\GAC_MSIL\office\15.0.0.0__71e9bce111e9429c\OFFICE.DLL</HintPath>
+      <EmbedInteropTypes>false</EmbedInteropTypes>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
