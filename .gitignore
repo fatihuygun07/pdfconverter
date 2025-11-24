@@ -2,6 +2,8 @@
 bin/
 obj/
 .vs/
+release/
+release-*/
 
 # User-specific files
 *.user

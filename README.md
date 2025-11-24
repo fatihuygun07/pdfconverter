@@ -14,10 +14,17 @@ Modern WPF desktop app for PDF and Office conversions. Uses iText7 for PDF manip
 - .NET 8 SDK (for build/run) or the published exe
 - Microsoft Office installed for Word/Excel/PowerPoint conversions
 
-## Prebuilt exe (ready for GitHub)
-- Framework-dependent publish output is in `release/` (~63 MB). Commit/push that folder so users can download and run the app.
-- Target machines need the .NET 8 Desktop Runtime; keep every file in the folder alongside `PdfConverter.exe`.
-- A self-contained single-file publish (`dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true`) is ~190 MB; use a GitHub Release asset or LFS if you need that variant.
+## Usage
+- From source: `dotnet run -c Release` (restores and launches the WPF app).
+- From a published build: run `PdfConverter.exe` inside your publish folder (for example `release/` or `bin/Release/net8.0-windows/win-x64/publish/`). Keep all DLLs next to the exe.
+- Target machines need the .NET 8 Desktop Runtime; Office conversions still require locally installed Office apps.
+
+## Publish output (for releases)
+- To generate a shareable folder (not committed to the repo), run:  
+  `dotnet publish -c Release -r win-x64 --self-contained false -p:PublishSingleFile=false -o release`
+- Zip the `release/` folder and upload it as a GitHub Release asset.
+- If you need a single-file build, use:  
+  `dotnet publish -c Release -r win-x64 -p:PublishSingleFile=true --self-contained true` (about 190 MB); publish the exe via a Release asset or LFS instead of committing it.
 
 ## Build & Run
 ```bash
